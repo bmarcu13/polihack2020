@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".UserSignupActivity"></activity>
         <activity android:name=".UserLoginActivity" />
+        <activity android:name=".UserApp.UserMenuActivity"></activity>
+        <activity android:name=".DoctorApp.PatientList.AddPatientActivity" />
+        <activity android:name=".DoctorApp.PatientList.PatientsListActivity" />
+        <activity android:name=".DoctorApp.DoctorMenuActivity" />
         <activity android:name=".DoctorLoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".StartupPageActivity">
