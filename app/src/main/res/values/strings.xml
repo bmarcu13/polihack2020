@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">polihack2020bylos</string>
+    <string name="startup_text_patient">I am a patient</string>
+    <string name="startup_text_doctor">I am a doctor</string>
 </resources>
