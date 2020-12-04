@@ -35,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_field_background"
                 android:ems="10"
-                android:hint="@string/login_hint_email"
                 android:inputType="textEmailAddress"
                 android:lines="1"
                 android:maxLines="1"
@@ -65,7 +64,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/input_field_background"
-                android:hint="@string/login_password"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:maxLines="1"
@@ -75,7 +73,7 @@
                 android:textColorHint="@color/grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EmailFieldBar" />
+                app:layout_constraintTop_toBottomOf="@+id/email_field_bar" />
 
             <TextView
                 android:id="@+id/delimiter_text"
@@ -100,7 +98,7 @@
                 android:layout_marginRight="10dp"/>
 
             <View
-                android:id="@+id/delimiterRight"
+                android:id="@+id/delimiter_right"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/delimitation_line"
@@ -110,7 +108,7 @@
                 android:layout_marginLeft="10dp"/>
 
             <TextView
-                android:id="@+id/createAccount"
+                android:id="@+id/create_account_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -123,7 +121,7 @@
                 app:layout_constraintTop_toBottomOf="@id/passwordField" />
 
             <TextView
-                android:id="@+id/passRecovery"
+                android:id="@+id/pass_recovery_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -136,7 +134,7 @@
                 android:onClick="resetPassword"/>
 
             <View
-                android:id="@+id/PasswordFieldBar"
+                android:id="@+id/password_field_bar"
                 android:layout_width="280dp"
                 android:layout_height="5dp"
                 android:background="@drawable/active_focus_input_field_bar"
@@ -145,22 +143,13 @@
                 app:layout_constraintStart_toStartOf="@id/passwordField" />
 
             <View
-                android:id="@+id/EmailFieldBar"
+                android:id="@+id/email_field_bar"
                 android:layout_width="280dp"
                 android:layout_height="5dp"
                 android:background="@drawable/active_focus_input_field_bar"
                 android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="@+id/EmailField"
                 app:layout_constraintBottom_toBottomOf="@+id/EmailField" />
-
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/googleSignInButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/delimiterText"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

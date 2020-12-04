@@ -3,6 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="gradientStartColor">2541b2</color>
-    <color name="gradientEndColor">06bee1</color>
+    <color name="gradientStartColor">#2541b2</color>
+    <color name="gradientEndColor">#06bee1</color>
+    <color name="inputFieldGrey">#f0f0f0</color>
+    <color name="black">#000000</color>
+    <color name="grey">#CBCBCB</color>
+    <color name="white">#ffffff</color>
 </resources>

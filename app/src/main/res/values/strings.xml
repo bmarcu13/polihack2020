@@ -2,4 +2,5 @@
     <string name="app_name">polihack2020bylos</string>
     <string name="startup_text_patient">I am a patient</string>
     <string name="startup_text_doctor">I am a doctor</string>
+    <string name="login_button_text">Login</string>
 </resources>
