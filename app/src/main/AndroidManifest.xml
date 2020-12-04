@@ -13,6 +13,9 @@
         <activity android:name=".DoctorApp.PatientList.AddPatientActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientsListActivity" />
         <activity android:name=".DoctorApp.DoctorMenuActivity" />
+        <activity android:name=".PatientLoginActivity"></activity>
+        <activity android:name=".DoctorLoginActivity" />
+        <activity android:name=".StartupPageActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
