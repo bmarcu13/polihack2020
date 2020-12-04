@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.polihack2020bylos.UserApp.UserMenuActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,6 +27,8 @@ public class UserLoginActivity extends AppCompatActivity {
     private FrameLayout loadingScreen;
     private TextView create_an_account_button;
 
+    private View emailFieldActivityBar, passwordFieldActivityBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,9 @@ public class UserLoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.login_button);
         loadingScreen = findViewById(R.id.loadingOverlay);
         create_an_account_button = findViewById(R.id.create_account_button);
+
+        emailFieldActivityBar = findViewById(R.id.email_field_bar);
+        passwordFieldActivityBar = findViewById(R.id.password_field_bar);
 
         if (fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -77,5 +83,15 @@ public class UserLoginActivity extends AppCompatActivity {
                 });
             }
         });
+
+        create_an_account_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserLoginActivity.this, UserSignupActivity.class));
+            }
+        });
+
+        Util.setInputFieldActivityStatus(emailField, emailFieldActivityBar);
+        Util.setInputFieldActivityStatus(passField, passwordFieldActivityBar);
     }
 }

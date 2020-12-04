@@ -26,6 +26,8 @@ public class UserSignupActivity extends AppCompatActivity {
     private FrameLayout loadingScreen;
     private TextView goToLogin;
 
+    private View emailFieldActivityBar, passwordFieldActivityBar, passwordConfirmationActivityBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,10 @@ public class UserSignupActivity extends AppCompatActivity {
         loadingScreen = findViewById(R.id.loadingOverlay);
 
         goToLogin = findViewById(R.id.go_to_login);
+
+        emailFieldActivityBar = findViewById(R.id.email_field_bar);
+        passwordFieldActivityBar = findViewById(R.id.password_field_bar);
+        passwordConfirmationActivityBar = findViewById(R.id.confirm_password_bar);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,5 +102,8 @@ public class UserSignupActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Util.setInputFieldActivityStatus(emailField, emailFieldActivityBar);
+        Util.setInputFieldActivityStatus(passField, passwordFieldActivityBar);
     }
 }
