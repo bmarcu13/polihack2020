@@ -6,4 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".DoctorLoginActivity">
 
+    <View
+        android:id="@+id/header_circle"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/gradient_circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_circle"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="30dp">
+
+        <EditText
+            android:id="@+id/email_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_field_background"
+            android:ems="10"
+            android:hint="@string/email_input_hint"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/ripple_effect_mask_button"
+            android:text="@string/login_button_text"
+            app:layout_constraintEnd_toEndOf="@id/password_field"
+            app:layout_constraintStart_toStartOf="@id/password_field"
+            app:layout_constraintTop_toBottomOf="@id/password_field"/>
+
+        <EditText
+            android:id="@+id/password_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_field_background"
+            android:hint="@string/password_input_hint"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_field_bar" />
+
+
+
+        <TextView
+            android:id="@+id/create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/login_create_an_account"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/password_field"
+            app:layout_constraintTop_toBottomOf="@id/password_field" />
+
+        <TextView
+            android:id="@+id/pass_recovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/login_forgot_password"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/password_field"
+            app:layout_constraintTop_toBottomOf="@+id/password_field_bar"/>
+
+        <View
+            android:id="@+id/password_field_bar"
+            android:layout_width="280dp"
+            android:layout_height="5dp"
+            android:background="@drawable/active_focus_input_field_bar"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/password_field"
+            app:layout_constraintStart_toStartOf="@id/password_field" />
+
+        <View
+            android:id="@+id/email_field_bar"
+            android:layout_width="280dp"
+            android:layout_height="5dp"
+            android:background="@drawable/active_focus_input_field_bar"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/email_field"
+            app:layout_constraintBottom_toBottomOf="@+id/email_field" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

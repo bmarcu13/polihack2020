@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UserSignupActivity"></activity>
+        <activity android:name=".UserLoginActivity" />
         <activity android:name=".UserApp.UserMenuActivity"></activity>
         <activity android:name=".DoctorApp.PatientList.AddPatientActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientsListActivity" />
         <activity android:name=".DoctorApp.DoctorMenuActivity" />
-        <activity android:name=".PatientLoginActivity"></activity>
         <activity android:name=".DoctorLoginActivity" />
-        <activity android:name=".StartupPageActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".StartupPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

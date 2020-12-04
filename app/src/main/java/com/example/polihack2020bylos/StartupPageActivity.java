@@ -28,7 +28,7 @@ public class StartupPageActivity extends AppCompatActivity {
         patientButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(StartupPageActivity.this, PatientLoginActivity.class));
+                startActivity(new Intent(StartupPageActivity.this, UserLoginActivity.class));
             }
         });
     }
