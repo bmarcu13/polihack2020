@@ -45,7 +45,8 @@
                 android:textColorHint="@color/grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="@string/email_input_hint"/>
 
             <Button
                 android:id="@+id/login_button"
@@ -54,9 +55,9 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/ripple_effect_mask_button"
                 android:text="@string/login_button_text"
-                app:layout_constraintEnd_toEndOf="@id/passwordField"
-                app:layout_constraintStart_toStartOf="@id/passwordField"
-                app:layout_constraintTop_toBottomOf="@id/passwordField"/>
+                app:layout_constraintEnd_toEndOf="@id/password_field"
+                app:layout_constraintStart_toStartOf="@id/password_field"
+                app:layout_constraintTop_toBottomOf="@id/password_field"/>
 
             <EditText
                 android:id="@+id/password_field"
@@ -73,52 +74,21 @@
                 android:textColorHint="@color/grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_field_bar" />
+                app:layout_constraintTop_toBottomOf="@+id/email_field"
+                android:hint="@string/password_input_hint"/>
 
-            <TextView
-                android:id="@+id/delimiter_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:text="@string/login_or"
-                android:textColor="@color/grey"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/loginButton" />
-
-            <View
-                android:id="@+id/delimiter_left"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/delimitation_line"
-                app:layout_constraintEnd_toStartOf="@id/delimiterText"
-                app:layout_constraintBottom_toBottomOf="@id/delimiterText"
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="10dp"/>
-
-            <View
-                android:id="@+id/delimiter_right"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/delimitation_line"
-                app:layout_constraintStart_toEndOf="@id/delimiterText"
-                app:layout_constraintBottom_toBottomOf="@id/delimiterText"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:id="@+id/create_account_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:onClick="toSignupActivity"
                 android:text="@string/login_create_an_account"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/passwordField"
-                app:layout_constraintTop_toBottomOf="@id/passwordField" />
+                app:layout_constraintEnd_toEndOf="@id/password_field"
+                app:layout_constraintTop_toBottomOf="@id/password_field" />
 
             <TextView
                 android:id="@+id/pass_recovery_button"
@@ -129,9 +99,8 @@
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/passwordField"
-                app:layout_constraintTop_toBottomOf="@+id/PasswordFieldBar"
-                android:onClick="resetPassword"/>
+                app:layout_constraintStart_toStartOf="@id/password_field_bar"
+                app:layout_constraintTop_toBottomOf="@+id/password_field_bar"/>
 
             <View
                 android:id="@+id/password_field_bar"
@@ -139,8 +108,8 @@
                 android:layout_height="5dp"
                 android:background="@drawable/active_focus_input_field_bar"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/passwordField"
-                app:layout_constraintStart_toStartOf="@id/passwordField" />
+                app:layout_constraintBottom_toBottomOf="@+id/password_field"
+                app:layout_constraintStart_toStartOf="@id/password_field" />
 
             <View
                 android:id="@+id/email_field_bar"
@@ -148,8 +117,8 @@
                 android:layout_height="5dp"
                 android:background="@drawable/active_focus_input_field_bar"
                 android:visibility="invisible"
-                app:layout_constraintStart_toStartOf="@+id/EmailField"
-                app:layout_constraintBottom_toBottomOf="@+id/EmailField" />
+                app:layout_constraintStart_toStartOf="@+id/email_field"
+                app:layout_constraintBottom_toBottomOf="@+id/email_field" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
