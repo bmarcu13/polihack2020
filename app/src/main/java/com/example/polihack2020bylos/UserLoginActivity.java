@@ -6,7 +6,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +29,7 @@ public class UserLoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_login);
+        setContentView(R.layout.activity_user_login);
 
         fAuth = FirebaseAuth.getInstance();
         emailField = findViewById(R.id.email_field);
@@ -67,7 +66,7 @@ public class UserLoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
                             finish();
                         }
                         else {
@@ -76,13 +75,6 @@ public class UserLoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-            }
-        });
-
-        create_an_account_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(UserLoginActivity.this, UserSignupActivity.class));
             }
         });
     }

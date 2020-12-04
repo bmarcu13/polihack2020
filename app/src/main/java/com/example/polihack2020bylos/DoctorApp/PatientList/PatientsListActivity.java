@@ -1,58 +1,86 @@
 package com.example.polihack2020bylos.DoctorApp.PatientList;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.polihack2020bylos.DoctorApp.AddPatient.Patient;
 import com.example.polihack2020bylos.R;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class PatientsListActivity extends AppCompatActivity {
 
-    Context context = this;
-    List<Patient> patientsList;
-    ListView patientListView;
-
-
+    private FirebaseFirestore fStore;
+    private RecyclerView patientsListRv;
+    private FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patients_list);
 
+        patientsListRv = findViewById(R.id.patients_list_rv);
+        fStore = FirebaseFirestore.getInstance();
+        String clickUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        Query query = fStore.collection("patients").whereEqualTo("id", "J7kDrW75LuLtEdsWqCa9");
+        FirestoreRecyclerOptions<Patient> options = new FirestoreRecyclerOptions.Builder<Patient>().setQuery(query, Patient.class).build();
 
-    }
-
-
-    private void setUpPatientsList(){
-        patientsList = new ArrayList<>();
-
-        //creare lista cu pacienti
-    }
-
-    private void setUpPatientListAdapter(){
-        PatientsListAdapter patientsListAdapter = new PatientsListAdapter(context, R.layout.layout_patient, patientsList);
-        patientListView = findViewById(R.id.lvPatientsList);
-        patientListView.setAdapter(patientsListAdapter);
-
-
-        /*
-        //pentru selectarea unui anumit obiect
-        objectTypesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        adapter = new FirestoreRecyclerAdapter<Patient, PatientsViewHolder>(options) {
+            @NonNull
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(ObjectTypeMenuActivity.this, ObjectMenuActivity.class);
-                ObjectType selectedItem = (ObjectType) objectTypesListView.getItemAtPosition(position);
-
-                intent.putExtra("Object", (Serializable) selectedItem);
-                startActivity(intent);
+            public PatientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_patient, parent, false);
+                return new PatientsViewHolder(view);
             }
-        });
-         */
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            protected void onBindViewHolder(@NonNull PatientsViewHolder holder, int position, @NonNull Patient model) {
+                holder.name.setText(model.getName());
+                holder.age.setText(model.getAge().toString());
+            }
+        };
+
+        patientsListRv.setHasFixedSize(true);
+        patientsListRv.setLayoutManager(new LinearLayoutManager(this));
+        patientsListRv.setAdapter(adapter);
     }
+
+    private class PatientsViewHolder extends RecyclerView.ViewHolder{
+        private TextView name;
+        private TextView age;
+
+        public PatientsViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            name = itemView.findViewById(R.id.patient_name);
+            age = itemView.findViewById(R.id.patient_age);
+        }
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        adapter.stopListening();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
 }

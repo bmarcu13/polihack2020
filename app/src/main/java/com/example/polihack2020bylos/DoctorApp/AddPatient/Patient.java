@@ -1,79 +1,103 @@
 package com.example.polihack2020bylos.DoctorApp.AddPatient;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Patient implements Serializable {
-    private Long patientId;
-    private String patientName;
-    private Integer patientAge;
-    private String patientSex;
-    private String patientBloodType;
-    private String patientSymptomesDescription;
-    private String patientTreatment;
+public class Patient{
 
-    public Patient(Long patientId, String patientName, Integer patientAge, String patientSex, String patientBloodType, String patientSymptomesDescription, String patientTreatment) {
-        this.patientId = patientId;
-        this.patientName = patientName;
-        this.patientAge = patientAge;
-        this.patientSex = patientSex;
-        this.patientBloodType = patientBloodType;
-        this.patientSymptomesDescription = patientSymptomesDescription;
-        this.patientTreatment = patientTreatment;
+
+    private String id;
+    private String name;
+    private Integer age;
+//    private String sex;
+//    private String blood_type;
+//    private ArrayList<String> symptomes;
+//    private ArrayList<String> treatment;
+//    private ArrayList<String> side_effects;
+//    private boolean feeling_better;
+
+    private Patient(){}
+
+    public Patient(String id, String name, Integer age, String sex, String blood_type, ArrayList<String> symptomes, ArrayList<String> treatment, ArrayList<String> side_effects, boolean feeling_better) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+//        this.sex = sex;
+//        this.blood_type = blood_type;
+//        this.symptomes = symptomes;
+//        this.treatment = treatment;
+//        this.side_effects = side_effects;
+//        this.feeling_better = feeling_better;
     }
 
-    public Long getPatientId() {
-        return patientId;
+    public String getId() {
+        return id;
     }
 
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getPatientName() {
-        return patientName;
+    public String getName() {
+        return name;
     }
 
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getPatientAge() {
-        return patientAge;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setPatientAge(Integer patientAge) {
-        this.patientAge = patientAge;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public String getPatientSex() {
-        return patientSex;
-    }
-
-    public void setPatientSex(String patientSex) {
-        this.patientSex = patientSex;
-    }
-
-    public String getPatientBloodType() {
-        return patientBloodType;
-    }
-
-    public void setPatientBloodType(String patientBloodType) {
-        this.patientBloodType = patientBloodType;
-    }
-
-    public String getPatientSymptomesDescription() {
-        return patientSymptomesDescription;
-    }
-
-    public void setPatientSymptomesDescription(String patientSymptomesDescription) {
-        this.patientSymptomesDescription = patientSymptomesDescription;
-    }
-
-    public String getPatientTreatment() {
-        return patientTreatment;
-    }
-
-    public void setPatientTreatment(String patientTreatment) {
-        this.patientTreatment = patientTreatment;
-    }
+//    public String getSex() {
+//        return sex;
+//    }
+//
+//    public void setSex(String sex) {
+//        this.sex = sex;
+//    }
+//
+//    public String getBlood_type() {
+//        return blood_type;
+//    }
+//
+//    public void setBlood_type(String blood_type) {
+//        this.blood_type = blood_type;
+//    }
+//
+//    public ArrayList<String> getSymptomes() {
+//        return symptomes;
+//    }
+//
+//    public void setSymptomes(ArrayList<String> symptomes) {
+//        this.symptomes = symptomes;
+//    }
+//
+//    public ArrayList<String> getTreatment() {
+//        return treatment;
+//    }
+//
+//    public void setTreatment(ArrayList<String> treatment) {
+//        this.treatment = treatment;
+//    }
+//
+//    public ArrayList<String> getSide_effects() {
+//        return side_effects;
+//    }
+//
+//    public void setSide_effects(ArrayList<String> side_effects) {
+//        this.side_effects = side_effects;
+//    }
+//
+//    public boolean isFeeling_better() {
+//        return feeling_better;
+//    }
+//
+//    public void setFeeling_better(boolean feeling_better) {
+//        this.feeling_better = feeling_better;
+//    }
 }

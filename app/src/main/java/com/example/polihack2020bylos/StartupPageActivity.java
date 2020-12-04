@@ -23,12 +23,14 @@ public class StartupPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(StartupPageActivity.this, DoctorLoginActivity.class));
+                finish();
             }
         });
         patientButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(StartupPageActivity.this, UserLoginActivity.class));
+                finish();
             }
         });
     }
