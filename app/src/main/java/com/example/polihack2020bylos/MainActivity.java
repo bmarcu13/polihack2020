@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button logoutButton;
     private FirebaseAuth fAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
