@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".UserApp.MedicationCart.MedicationCartActivity"></activity>
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
+        <activity android:name=".ChartsActivity"></activity>
         <activity android:name=".UserSignupActivity" />
+        <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity"></activity>/>
         <activity android:name=".UserLoginActivity" />
         <activity android:name=".UserApp.UserMenuActivity" />
         <activity android:name=".DoctorApp.PatientList.AddPatientActivity" />
