@@ -11,11 +11,12 @@ public class PatientEntity {
     private ArrayList<String> medication;
     private ArrayList<String> sideEffects;
     private ArrayList<String> symptomps;
+    private Boolean gotBetter;
 
     public PatientEntity() {
     }
 
-    public PatientEntity(Integer age, String bloodType, String name, String sex, ArrayList<String> medication, ArrayList<String> sideEffects, ArrayList<String> symptomps) {
+    public PatientEntity(Integer age, String bloodType, String name, String sex, ArrayList<String> medication, ArrayList<String> sideEffects, ArrayList<String> symptomps, Boolean gotBetter) {
         this.age = age;
         this.bloodType = bloodType;
         this.name = name;
@@ -23,6 +24,7 @@ public class PatientEntity {
         this.medication = medication;
         this.sideEffects = sideEffects;
         this.symptomps = symptomps;
+        this.gotBetter = gotBetter;
     }
 
     public Integer getAge() {
@@ -79,5 +81,13 @@ public class PatientEntity {
 
     public void setSymptomps(ArrayList<String> symptomps) {
         this.symptomps = symptomps;
+    }
+
+    public Boolean getGotBetter() {
+        return gotBetter;
+    }
+
+    public void setGotBetter(Boolean gotBetter) {
+        this.gotBetter = gotBetter;
     }
 }

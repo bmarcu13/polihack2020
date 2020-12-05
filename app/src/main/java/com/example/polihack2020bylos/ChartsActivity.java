@@ -7,15 +7,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.service.autofill.Dataset;
 import android.util.Log;
 import android.view.View;
 
 import com.example.polihack2020bylos.Entities.PatientEntity;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -41,18 +45,17 @@ public class ChartsActivity extends AppCompatActivity {
 
     private View topView;
 
-    private PieChart age_pie_chart;
 
     private PatientEntity patientEntity;
     ArrayList<Integer> intConversion = new ArrayList<>();
 
     private ArrayList<PatientEntity> patientsList;
-    private ArrayList<PatientEntity> filteredList;
 
     private String age, sex, bloodType;
 
     private FirebaseFirestore fStore;
     private FirebaseAuth fAuth;
+    private BarChart barChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,18 +71,26 @@ public class ChartsActivity extends AppCompatActivity {
 
         setTitle("");
 
-        age_pie_chart = findViewById(R.id.pie_chart1);
         topView = findViewById(R.id.top_view);
+        barChart = findViewById(R.id.chart);
 
-        Map<String, Integer> ageMap = new HashMap<>();
         patientsList = new ArrayList<>();
+
+        ArrayList<String> medicationList = new ArrayList<>();
+        medicationList.add("Remdesivir");
+        medicationList.add("Lopinavir");
+        medicationList.add("Ritonavir");
+        medicationList.add("Ivermectin");
+        medicationList.add("Nurofen");
+        medicationList.add("Aspirin");
+        medicationList.add("Vitamin C");
+
 
         fStore.collection("patients").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-
                         PatientEntity patientEntity = new PatientEntity();
 
                         List<String> medicationList = (List<String>)documentSnapshot.get("medication");
@@ -103,14 +114,11 @@ public class ChartsActivity extends AppCompatActivity {
                         patientEntity.setAge(Integer.getInteger(documentSnapshot.get("age").toString()));
 
                         MaterialSpinner bloodTypeSpinner = findViewById(R.id.blood_type_spinner);
-                        bloodTypeSpinner.setItems("AB+", "AB-", "A+", "A-", "B+", "B-", "0+", "0-");
+                        bloodTypeSpinner.setItems("0I, Rh+", "0I, Rh- ", "AII, Rh+", "AII, Rh- ", "BIII, Rh+", "BIII, Rh- ", "ABIV, Rh+", "ABIV, Rh-");
                         MaterialSpinner sexSpinner = findViewById(R.id.sex_spinner);
                         sexSpinner.setItems("M", "F");
                         MaterialSpinner ageSpinner = findViewById(R.id.age_spinner);
                         ageSpinner.setItems("0-9", "10-19", "20-29", "30-39", "40-54", "55-69", "70+");
-
-
-
 
                         bloodTypeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
                             @Override
@@ -144,41 +152,13 @@ public class ChartsActivity extends AppCompatActivity {
                             }
                         });
 
-//                        if (patientEntity.getAge() < 10) {
-//                            int count = ageMap.containsKey("0-9") ? ageMap.get("0-9") : 0;
-//                            ageMap.put("0-9", count + 1);
-//                        }
-//                        if (patientEntity.getAge() < 20 && patientEntity.getAge() >= 10 ) {
-//                            int count = ageMap.containsKey("10-19") ? ageMap.get("10-19") : 0;
-//                            ageMap.put("10-19", count + 1);
-//                        }
-//                        if (patientEntity.getAge() < 30 && patientEntity.getAge() >= 20) {
-//                            int count = ageMap.containsKey("20-29") ? ageMap.get("20-29") : 0;
-//                            ageMap.put("20-29", count + 1);
-//                        }
-//                        if (patientEntity.getAge() < 40 && patientEntity.getAge() >= 30 ) {
-//                            int count = ageMap.containsKey("30-49") ? ageMap.get("30-49") : 0;
-//                            ageMap.put("30-49", count + 1);
-//                        }
-//                        if (patientEntity.getAge() < 55 && patientEntity.getAge() >= 40) {
-//                            int count = ageMap.containsKey("40-54") ? ageMap.get("40-54") : 0;
-//                            ageMap.put("40-54", count + 1);
-//                        }
-//                        if (patientEntity.getAge() < 70 && patientEntity.getAge() >= 55) {
-//                            int count = ageMap.containsKey("55-69") ? ageMap.get("55-69") : 0;
-//                            ageMap.put("55-69", count + 1);
-//                        }
-//                        if (patientEntity.getAge() >= 70) {
-//                            int count = ageMap.containsKey("70+") ? ageMap.get("70+") : 0;
-//                            ageMap.put("70+", count + 1);
-//                        }
-
                         patientEntity.setBloodType(documentSnapshot.get("blood_type").toString());
                         patientEntity.setSex(documentSnapshot.get("sex").toString());
                         patientEntity.setName(documentSnapshot.get("name").toString());
                         patientEntity.setMedication(medicationArrayList);
                         patientEntity.setSideEffects(sideEffectsArrayList);
                         patientEntity.setSymptomps(symptomsArrayList);
+                        patientEntity.setGotBetter(Boolean.valueOf(documentSnapshot.get("got_better").toString().trim()));
 
                         patientsList.add(patientEntity);
                     }
@@ -192,33 +172,67 @@ public class ChartsActivity extends AppCompatActivity {
                         }
                     });
 
+                    ArrayList<PatientEntity> filteredList = dataFiltering();
+                    ArrayList<Integer> drugEfficiencyList = getDrugEfficiencyList(medicationList, filteredList);
+
+                    ArrayList<BarEntry> entries = new ArrayList<>();
+                    for (int i = 0; i < drugEfficiencyList.size(); i++) {
+                        entries.add(new BarEntry(drugEfficiencyList.get(i), i));
+                    }
+                    BarDataSet barDataSet = new BarDataSet(entries, "Meds ");
+
+
+                    ArrayList<String> meds = new ArrayList<>();
+                    for (int i = 0; i < medicationList.size(); i++) {
+                        meds.add(medicationList.get(i));
+                    }
+
+                    barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+                    barDataSet.setValueTextColor(Color.BLACK);
+                    barDataSet.setBarSpacePercent(50f);
+                    BarData barData = new BarData(meds, barDataSet);
+                    barChart.setData(barData);
+
+                    barChart.setTouchEnabled(true);
+                    barChart.setDragEnabled(true);
+                    barChart.setScaleEnabled(true);
+
                 }
             }
         });
 
-        PieDataSet pieDataSet = new PieDataSet(dataValues1(), "");
-        pieDataSet.setColors((ColorTemplate.COLORFUL_COLORS));
-        pieDataSet.setValueTextColor(Color.BLACK);
-        pieDataSet.setDrawValues(false);
-
-        PieData pieData = new PieData(pieDataSet);
-
-        setDescription(age_pie_chart.getDescription());
-
-        age_pie_chart.setData(pieData);
-        age_pie_chart.setCenterText("AGE");
-        age_pie_chart.setCenterTextSize(30f);
-        age_pie_chart.animate();
-        age_pie_chart.getLegend().setEnabled(false);
-        age_pie_chart.setEntryLabelTextSize(15f);
-        age_pie_chart.setEntryLabelColor(Color.BLACK);
-        age_pie_chart.setTouchEnabled(false);
-
-        dataFiltering();
+        medicationList.add("Mask");
 
     }
 
+
+    private Integer getDrugEfficiency(String drugName, ArrayList<PatientEntity> filteredList) {
+        Integer totalApp = 0;
+        Integer gotBetter = 0;
+        for (int i = 0; i < filteredList.size(); i++) {
+            if (filteredList.get(i).getMedication().contains(drugName)) {
+                totalApp ++;
+                if (filteredList.get(i).getGotBetter()) {
+                    gotBetter ++;
+                }
+            }
+        }
+        return totalApp == 0 ? 0 :gotBetter * 100 / totalApp;
+    }
+
+    private ArrayList<Integer> getDrugEfficiencyList(ArrayList<String> medicationList, ArrayList<PatientEntity> filteredList) {
+        ArrayList<Integer> drugsEfficiencyList = new ArrayList<>();
+
+        for (int i = 0; i < medicationList.size(); i++) {
+            drugsEfficiencyList.add(getDrugEfficiency(medicationList.get(i), filteredList));
+        }
+        return drugsEfficiencyList;
+    }
+
     private ArrayList<PatientEntity> dataFiltering() {
+
+        ArrayList<PatientEntity> filteredList = new ArrayList<>();
+
         for (int i = 0; i < patientsList.size(); i++) {
             PatientEntity currentPatient = patientsList.get(i);
             if (bloodType != null && sex != null && intConversion.size() != 0) {
@@ -272,23 +286,5 @@ public class ChartsActivity extends AppCompatActivity {
         return filteredList;
     }
 
-    private void setDescription(Description description) {
-        description.setText("Age groups of risk");
-        description.setTextSize(15f);
-    }
-
-    private ArrayList<PieEntry> dataValues1() {
-        ArrayList<PieEntry> dataVals = new ArrayList<>();
-
-        dataVals.add(new PieEntry(1, "70+"));
-        dataVals.add(new PieEntry(3, "55-69"));
-//        dataVals.add(new PieEntry(40, "40-54"));
-//        dataVals.add(new PieEntry(30, "30-39"));
-//        dataVals.add(new PieEntry(27, "20-29"));
-//        dataVals.add(new PieEntry(18, "10-19"));
-//        dataVals.add(new PieEntry(10, "0-9"));
-
-        return dataVals;
-    }
 
 }
