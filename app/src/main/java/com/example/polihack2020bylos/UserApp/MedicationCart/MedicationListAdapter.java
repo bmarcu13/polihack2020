@@ -60,6 +60,7 @@ public class MedicationListAdapter extends ArrayAdapter<Medication> {
             public void onClick(View view) {
                 clear();
 
+                medicationDatabase = new MedicationDatabase(mContext);
                 Medication existingMedication = medicationDatabase.getMedicationById(medicationId);
 
                 if(existingMedication.getMedicationQuantity() > 1){
