@@ -9,4 +9,9 @@
     <color name="black">#000000</color>
     <color name="grey">#CBCBCB</color>
     <color name="white">#ffffff</color>
+    <color name="primary_color">#219dd8</color>
+    <color name="secondary_color">#3c8fcd</color>
+    <color name="patient_card_color">#F5F5F5</color>
+    <color name="patient_page_bg">#d9e3ff</color>
+    <color name="blue_arrow">#849BD0</color>
 </resources>
