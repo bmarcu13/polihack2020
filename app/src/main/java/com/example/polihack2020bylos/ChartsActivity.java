@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.polihack2020bylos.Entities.PatientEntity;
@@ -52,7 +53,8 @@ public class ChartsActivity extends AppCompatActivity {
 
     private BarChart barChartMedication, barChartSymptoms;
 
-    private Button buttonGoToCart, bineintelesButton;
+    private Button bineintelesButton;
+    private ImageView buttonGoToCart;
     private ListView medsBuyListView;
 
     private ArrayList<String> medicationList;
