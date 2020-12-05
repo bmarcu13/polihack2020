@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private Button logoutButton;
+    private Button goToCharts;
     private FirebaseAuth fAuth;
 
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         logoutButton = findViewById(R.id.logout);
+        goToCharts = findViewById(R.id.go_to_charts);
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 fAuth.signOut();
                 startActivity(new Intent(MainActivity.this, StartupPageActivity.class));
                 finish();
+            }
+        });
+
+        goToCharts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ChartsActivity.class));
             }
         });
 
