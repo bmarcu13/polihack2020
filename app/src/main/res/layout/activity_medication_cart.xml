@@ -9,15 +9,16 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:background="@drawable/ic_wave_shortened"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="Medication Cart"
         android:textColor="@color/white"
         android:textSize="18dp"
@@ -32,8 +33,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/finalPrice"
@@ -63,7 +66,7 @@
             android:id="@+id/buttonBuy"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00FFFFFF"
+            android:background="@drawable/ripple_effect_button_startup"
             android:backgroundTint="#00FFFFFF"
             android:text="BUY MEDICATION"
             android:textColor="#FFFFFF" />

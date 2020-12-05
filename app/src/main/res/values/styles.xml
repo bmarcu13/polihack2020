@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <string name="doctor_account"><u>Doctor Account</u></string>
+    <string name="user_account"><u>User Account</u></string>
+
+
 </resources>

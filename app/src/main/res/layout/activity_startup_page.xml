@@ -52,7 +52,7 @@
         android:textColor="@color/white"
         android:paddingEnd="15dp"
         android:layout_marginBottom="40dp"
-        android:text="@string/startup_text_patient"
+        android:text="I am a user"
         android:background="@drawable/ripple_effect_button_startup"/>
 
     <Button

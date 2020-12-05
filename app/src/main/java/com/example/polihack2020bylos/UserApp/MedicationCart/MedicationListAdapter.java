@@ -50,9 +50,7 @@ public class MedicationListAdapter extends ArrayAdapter<Medication> {
         tvMedicationName.setText(medicationName);
         tvMedicationQuantityPrice.setText(medicationQuantity + " x " + medicationPrice + "€");
         tvMedicationDescription.setText(medicationDescription);
-
-        /////////////////////////set picture
-
+        setUpList(medicationName, ivMedicationPicture);
 
 
         buttonRemove.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +79,41 @@ public class MedicationListAdapter extends ArrayAdapter<Medication> {
         });
 
         return convertView;
+    }
+
+
+    private void setUpList(String medicationName, ImageView ivMedPicture){
+        if(medicationName.equals("Remdesivir")){
+            ivMedPicture.setImageResource(R.drawable.reme);
+        }
+
+        if(medicationName.equals("Lopinavir")){
+            ivMedPicture.setImageResource(R.drawable.lopi);
+        }
+
+        if(medicationName.equals("Ritonavir")){
+            ivMedPicture.setImageResource(R.drawable.rito);
+        }
+
+        if(medicationName.equals("Ivermectin")){
+            ivMedPicture.setImageResource(R.drawable.iver);
+        }
+
+        if(medicationName.equals("Nurofen")){
+            ivMedPicture.setImageResource(R.drawable.nuro);
+        }
+
+        if(medicationName.equals("Aspirin")){
+            ivMedPicture.setImageResource(R.drawable.aspi);
+        }
+
+        if(medicationName.equals("Vitamin C")){
+            ivMedPicture.setImageResource(R.drawable.vitaminc);
+        }
+
+        if(medicationName.equals("Mask")){
+            ivMedPicture.setImageResource(R.drawable.masca2);
+        }
     }
 
 }
