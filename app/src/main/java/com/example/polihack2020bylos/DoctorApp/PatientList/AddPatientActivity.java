@@ -76,7 +76,7 @@ public class AddPatientActivity extends AppCompatActivity implements MultiSelect
 
         addPatientButton = findViewById(R.id.add_patient_button);
 
-        bloodTypeSpinner.setItems("AB+", "AB-", "A+", "A-", "B+", "B-", "0+", "0-");
+        bloodTypeSpinner.setItems("0I, Rh+", "0I, Rh- ", "AII, Rh+", "AII, Rh- ", "BIII, Rh+", "BIII, Rh- ", "ABIV, Rh+", "ABIV, Rh-");
         sexSpinner.setItems("M", "F");
 
         bloodTypeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="70dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -12,25 +13,94 @@
         android:layout_margin="10dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/patient_card_color"
+        android:elevation="100dp"
+        android:padding="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                app:layout_constraintTop_toTopOf="parent"
+            <ImageView
+                android:id="@+id/ic_name"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_nume"
                 app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/patient_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                app:layout_constraintTop_toBottomOf="@id/patient_name"
-                app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/patient_age"
+                android:id="@+id/patient_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_name"
+                app:layout_constraintStart_toEndOf="@+id/ic_name"
+                android:textColor="@color/black"/>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ic_age"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:src="@drawable/ic_varsta"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/ic_name" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/patient_age"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:textSize="18sp"-->
+<!--                android:layout_marginBottom="2dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/ic_age"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/ic_name"-->
+<!--                android:textColor="@color/black"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ic_blood_type"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:src="@drawable/ic_sange"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/ic_age" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/patient_blood_type"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:textSize="18sp"-->
+<!--                android:layout_marginBottom="2dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/ic_blood_type"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/ic_name"-->
+<!--                android:textColor="@color/black"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ic_sex"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:src="@drawable/ic_sex"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/ic_blood_type" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/patient_sex"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:textSize="18sp"-->
+<!--                android:layout_marginBottom="2dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/ic_sex"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/ic_name"-->
+<!--                android:textColor="@color/black"/>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
