@@ -66,7 +66,7 @@
             android:id="@+id/buttonBuy"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00FFFFFF"
+            android:background="@drawable/ripple_effect_button_startup"
             android:backgroundTint="#00FFFFFF"
             android:text="BUY MEDICATION"
             android:textColor="#FFFFFF" />
