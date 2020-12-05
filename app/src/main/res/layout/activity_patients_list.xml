@@ -25,8 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"
         app:cardCornerRadius="100dp"
-        android:elevation="10dp"
-        app:cardBackgroundColor="@color/black">
+        android:elevation="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

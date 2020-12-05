@@ -29,6 +29,7 @@ public class PatientsListActivity extends AppCompatActivity {
     private RecyclerView patientsListRv;
     private FirestoreRecyclerAdapter adapter;
     private CardView addPatientButton;
+    private FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,12 @@ public class PatientsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patients_list);
 
         addPatientButton = findViewById(R.id.add_patient_button);
+        fAuth = FirebaseAuth.getInstance();
 
         patientsListRv = findViewById(R.id.patients_list_rv);
         fStore = FirebaseFirestore.getInstance();
         String clickUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        Query query = fStore.collection("patients").whereEqualTo("id", "J7kDrW75LuLtEdsWqCa9");
+        Query query = fStore.collection("patients").whereEqualTo("id", fAuth.getCurrentUser().getUid());
         FirestoreRecyclerOptions<Patient> options = new FirestoreRecyclerOptions.Builder<Patient>().setQuery(query, Patient.class).build();
 
         adapter = new FirestoreRecyclerAdapter<Patient, PatientsViewHolder>(options) {

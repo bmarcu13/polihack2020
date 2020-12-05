@@ -41,10 +41,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/view"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        android:overScrollMode="never"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -113,45 +115,54 @@
                 app:layout_constraintTop_toTopOf="@id/blood_type_spinner"
                 app:layout_constraintStart_toEndOf="@id/blood_type_spinner"/>
 
-            <com.anurag.multiselectionspinner.MultiSpinner
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
                 android:id="@+id/symptoms_spinner"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start|center_vertical"
+                android:hint="Symptoms"
+                android:paddingStart="10dp"
+                app:hintText="Symptoms"
                 app:layout_constraintEnd_toEndOf="@id/age_field"
                 app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
-                app:layout_constraintTop_toBottomOf="@id/blood_type_spinner"
-                android:layout_marginTop="20dp"
-                android:hint="Symptoms"
-                android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:backgroundTint="@color/black"/>
+                app:layout_constraintTop_toBottomOf="@id/blood_type_spinner" />
 
-            <com.anurag.multiselectionspinner.MultiSpinner
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
                 android:id="@+id/medication_spinner"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 app:layout_constraintEnd_toEndOf="@id/age_field"
                 app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
                 app:layout_constraintTop_toBottomOf="@id/symptoms_spinner"
                 android:layout_marginTop="20dp"
                 android:hint="Medication"
                 android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:backgroundTint="@color/black"/>
+                android:paddingStart="10dp"/>
 
-            <com.anurag.multiselectionspinner.MultiSpinner
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
                 android:id="@+id/side_effects_spinner"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 app:layout_constraintEnd_toEndOf="@id/age_field"
                 app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
                 app:layout_constraintTop_toBottomOf="@id/medication_spinner"
                 android:layout_marginTop="20dp"
                 android:hint="Medication"
                 android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:backgroundTint="@color/black"/>
+                android:paddingStart="10dp" />
 
+            <Button
+                android:id="@+id/add_patient_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_effect_mask_button"
+                android:text="Add patient"
+                app:layout_constraintTop_toBottomOf="@id/side_effects_spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="25dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

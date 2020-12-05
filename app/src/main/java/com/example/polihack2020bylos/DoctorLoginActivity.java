@@ -45,7 +45,7 @@ public class DoctorLoginActivity extends AppCompatActivity {
         passwordFieldActivityBar = findViewById(R.id.password_field_bar);
 
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), DoctorMenuActivity.class));
             finish();
         }
 
