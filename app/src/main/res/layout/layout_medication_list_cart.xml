@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/ivMedicationPicture"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/buttonRemove"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/recycle_bin"
+        android:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMedicationDescription"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:text="Description"
+        app:layout_constraintEnd_toStartOf="@+id/tvMedicationQuantityPrice"
+        app:layout_constraintStart_toEndOf="@+id/ivMedicationPicture"
+        app:layout_constraintTop_toBottomOf="@+id/tvMedicationName" />
+
+    <TextView
+        android:id="@+id/tvMedicationName"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:gravity="start|center_vertical"
+        android:text="name"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvMedicationQuantityPrice"
+        app:layout_constraintStart_toEndOf="@+id/ivMedicationPicture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMedicationQuantityPrice"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start|center_vertical"
+        android:text="QuantityPrice"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRemove"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
