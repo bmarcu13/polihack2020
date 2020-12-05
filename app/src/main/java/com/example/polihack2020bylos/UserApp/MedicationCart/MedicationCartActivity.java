@@ -84,7 +84,7 @@ public class MedicationCartActivity extends AppCompatActivity {
                     Integer b = medicationList.get(i).getMedicationQuantity();
                     price = price + a * b;
                 }
-                finalPrice.setText("Final price: " + price.toString() + "€");
+                finalPrice.setText("Total price: " + price.toString() + "€");
                 handler.postDelayed(this, 100); // set time here to refresh textView
             }
         });

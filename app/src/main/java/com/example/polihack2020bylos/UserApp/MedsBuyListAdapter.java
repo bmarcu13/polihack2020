@@ -43,9 +43,12 @@ public class MedsBuyListAdapter extends ArrayAdapter<String> {
 
         Button buttonMedAdd = convertView.findViewById(R.id.buttonMedAdd);
         TextView tvMedName = convertView.findViewById(R.id.tvMedName);
+        TextView tvMedDescription = convertView.findViewById(R.id.tvMedDescription);
+        ImageView ivMedPicture = convertView.findViewById(R.id.ivMedPicture);
 
 
         tvMedName.setText(nameMed);
+        setUpAdapter(nameMed, tvMedDescription, ivMedPicture);
 
         buttonMedAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,49 @@ public class MedsBuyListAdapter extends ArrayAdapter<String> {
         });
 
         return convertView;
+    }
+
+
+    private void setUpAdapter(String medicationName, TextView tvMedDescription, ImageView ivMedPicture){
+        if(medicationName.equals("Remdesivir")){
+            tvMedDescription.setText("100mg, 400€");
+            ivMedPicture.setImageResource(R.drawable.reme);
+        }
+
+        if(medicationName.equals("Lopinavir")){
+            tvMedDescription.setText("160ml, 379.99€");
+            ivMedPicture.setImageResource(R.drawable.lopi);
+        }
+
+        if(medicationName.equals("Ritonavir")){
+            tvMedDescription.setText("100mg, 30 tablets, 90€");
+            ivMedPicture.setImageResource(R.drawable.rito);
+        }
+
+        if(medicationName.equals("Ivermectin")){
+            tvMedDescription.setText("20 tablets, 80.5€");
+            ivMedPicture.setImageResource(R.drawable.iver);
+        }
+
+        if(medicationName.equals("Nurofen")){
+            tvMedDescription.setText("250mg, 80 capsules, 15.99€");
+            ivMedPicture.setImageResource(R.drawable.nuro);
+        }
+
+        if(medicationName.equals("Aspirin")){
+            tvMedDescription.setText("100mg, 30 capsules, 12.75€");
+            ivMedPicture.setImageResource(R.drawable.aspi);
+        }
+
+        if(medicationName.equals("Vitamin C")){
+            tvMedDescription.setText("280g, 180 capsules, 26.99€");
+            ivMedPicture.setImageResource(R.drawable.vitaminc);
+        }
+
+        if(medicationName.equals("Mask")){
+            tvMedDescription.setText("50 pcs, 3 layers, 11.99€");
+            ivMedPicture.setImageResource(R.drawable.masca2);
+        }
     }
 
 

@@ -31,7 +31,9 @@
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Description"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvMedicationQuantityPrice"
         app:layout_constraintStart_toEndOf="@+id/ivMedicationPicture"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicationName" />
@@ -43,7 +45,8 @@
         android:layout_marginStart="10dp"
         android:gravity="start|center_vertical"
         android:text="name"
-        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textSize="17sp"
         app:layout_constraintEnd_toStartOf="@+id/tvMedicationQuantityPrice"
         app:layout_constraintStart_toEndOf="@+id/ivMedicationPicture"
         app:layout_constraintTop_toTopOf="parent" />

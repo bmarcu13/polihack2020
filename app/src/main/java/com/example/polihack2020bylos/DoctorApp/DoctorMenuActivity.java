@@ -6,15 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.polihack2020bylos.DoctorApp.PatientList.AddPatientActivity;
 import com.example.polihack2020bylos.DoctorApp.PatientList.PatientsListActivity;
 import com.example.polihack2020bylos.R;
+import com.example.polihack2020bylos.StartupPageActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DoctorMenuActivity extends AppCompatActivity {
 
-    Button buttonViewPatientsList;
-    Button buttonAddPatient;
+    TextView buttonViewPatientsList;
+    TextView buttonAddPatient;
+    private Button logoutButton;
+    private FirebaseAuth fAuth;
 
 
     @Override
@@ -23,6 +28,7 @@ public class DoctorMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_menu);
 
         manageButtons();
+        logOut();
 
     }
 
@@ -42,6 +48,22 @@ public class DoctorMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DoctorMenuActivity.this, AddPatientActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void logOut() {
+        fAuth = FirebaseAuth.getInstance();
+        logoutButton = findViewById(R.id.buttonLogOutDoctor);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fAuth.signOut();
+
+                Intent intent = new Intent(DoctorMenuActivity.this, StartupPageActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
