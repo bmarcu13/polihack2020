@@ -27,6 +27,8 @@ public class DoctorLoginActivity extends AppCompatActivity {
     private FrameLayout loadingScreen;
     private TextView create_an_account_button;
 
+    private View emailFieldActivityBar, passwordFieldActivityBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,11 @@ public class DoctorLoginActivity extends AppCompatActivity {
         loadingScreen = findViewById(R.id.loadingOverlay);
         create_an_account_button = findViewById(R.id.create_account_button);
 
+        emailFieldActivityBar = findViewById(R.id.email_field_bar);
+        passwordFieldActivityBar = findViewById(R.id.password_field_bar);
+
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), DoctorMenuActivity.class));
             finish();
         }
 
@@ -79,5 +84,8 @@ public class DoctorLoginActivity extends AppCompatActivity {
 
             }
         });
+
+        Util.setInputFieldActivityStatus(emailField, emailFieldActivityBar);
+        Util.setInputFieldActivityStatus(passField, passwordFieldActivityBar);
     }
 }

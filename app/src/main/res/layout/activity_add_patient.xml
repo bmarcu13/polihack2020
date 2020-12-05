@@ -6,12 +6,165 @@
     android:layout_height="match_parent"
     tools:context=".DoctorApp.PatientList.AddPatientActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_wave_shortened"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="139dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="32dp"
-        android:text="add patient"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Add a Patient"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <View
+        android:id="@+id/back_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_arrow_back_ios_24"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="136dp" />
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        android:overScrollMode="never"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:id="@+id/name_field"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/input_field_background"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_marginTop="20dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/grey"
+                app:layout_constraintEnd_toStartOf="@id/age_field"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="Name"/>
+
+            <EditText
+                android:id="@+id/age_field"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:background="@drawable/input_field_background"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_marginTop="20dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/name_field"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="Age"/>
+
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/blood_type_spinner"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sex_spinner"
+                app:layout_constraintTop_toBottomOf="@id/name_field"
+                android:layout_marginTop="20dp"
+                android:text="Blood Type"
+                app:ms_arrow_tint="@color/black"
+                android:gravity="center_vertical"/>
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/sex_spinner"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Sex"
+                android:gravity="center_vertical"
+                app:ms_arrow_tint="@color/black"
+                app:layout_constraintTop_toTopOf="@id/blood_type_spinner"
+                app:layout_constraintStart_toEndOf="@id/blood_type_spinner"/>
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/symptoms_spinner"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start|center_vertical"
+                android:hint="Symptoms"
+                android:paddingStart="10dp"
+                app:hintText="Symptoms"
+                app:layout_constraintEnd_toEndOf="@id/age_field"
+                app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
+                app:layout_constraintTop_toBottomOf="@id/blood_type_spinner" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/medication_spinner"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toEndOf="@id/age_field"
+                app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
+                app:layout_constraintTop_toBottomOf="@id/symptoms_spinner"
+                android:layout_marginTop="20dp"
+                android:hint="Medication"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"/>
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/side_effects_spinner"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toEndOf="@id/age_field"
+                app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
+                app:layout_constraintTop_toBottomOf="@id/medication_spinner"
+                android:layout_marginTop="20dp"
+                android:hint="Medication"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp" />
+
+            <Button
+                android:id="@+id/add_patient_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_effect_mask_button"
+                android:text="Add patient"
+                app:layout_constraintTop_toBottomOf="@id/side_effects_spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="25dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

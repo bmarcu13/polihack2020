@@ -2,10 +2,12 @@ package com.example.polihack2020bylos.DoctorApp.PatientList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,16 +28,21 @@ public class PatientsListActivity extends AppCompatActivity {
     private FirebaseFirestore fStore;
     private RecyclerView patientsListRv;
     private FirestoreRecyclerAdapter adapter;
+    private CardView addPatientButton;
+    private FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patients_list);
 
+        addPatientButton = findViewById(R.id.add_patient_button);
+        fAuth = FirebaseAuth.getInstance();
+
         patientsListRv = findViewById(R.id.patients_list_rv);
         fStore = FirebaseFirestore.getInstance();
         String clickUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        Query query = fStore.collection("patients").whereEqualTo("id", "J7kDrW75LuLtEdsWqCa9");
+        Query query = fStore.collection("patients").whereEqualTo("id", fAuth.getCurrentUser().getUid());
         FirestoreRecyclerOptions<Patient> options = new FirestoreRecyclerOptions.Builder<Patient>().setQuery(query, Patient.class).build();
 
         adapter = new FirestoreRecyclerAdapter<Patient, PatientsViewHolder>(options) {
@@ -57,6 +64,14 @@ public class PatientsListActivity extends AppCompatActivity {
         patientsListRv.setHasFixedSize(true);
         patientsListRv.setLayoutManager(new LinearLayoutManager(this));
         patientsListRv.setAdapter(adapter);
+
+        addPatientButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PatientsListActivity.this, AddPatientActivity.class));
+            }
+        });
+
     }
 
     private class PatientsViewHolder extends RecyclerView.ViewHolder{
