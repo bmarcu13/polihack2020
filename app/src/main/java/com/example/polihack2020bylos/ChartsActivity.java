@@ -5,13 +5,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.service.autofill.Dataset;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.polihack2020bylos.Entities.PatientEntity;
+import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationCartActivity;
+import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationListAdapter;
+import com.example.polihack2020bylos.UserApp.MedsBuyListAdapter;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -56,6 +62,9 @@ public class ChartsActivity extends AppCompatActivity {
     private FirebaseFirestore fStore;
     private FirebaseAuth fAuth;
     private BarChart barChart;
+
+    private Button buttonGoToCart;
+    private ListView medsBuyListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,6 +212,26 @@ public class ChartsActivity extends AppCompatActivity {
 
         medicationList.add("Mask");
 
+        goToCart();
+        setUpMedBuyListAdapter(medicationList);
+    }
+
+    private void goToCart(){
+        buttonGoToCart = findViewById(R.id.buttonGoToCart);
+        buttonGoToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChartsActivity.this, MedicationCartActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpMedBuyListAdapter(ArrayList<String> medicationList){
+        medsBuyListView = findViewById(R.id.lvMedsBuy);
+
+        MedsBuyListAdapter medsBuyListAdapter = new MedsBuyListAdapter(this, R.layout.layout_meds_buy, medicationList);
+        medsBuyListView.setAdapter(medsBuyListAdapter);
     }
 
 
