@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.polihack2020bylos.DoctorApp.AddPatient.Patient;
@@ -31,6 +32,7 @@ public class PatientsListActivity extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     private CardView addPatientButton;
     private FirebaseAuth fAuth;
+    private ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class PatientsListActivity extends AppCompatActivity {
 
         addPatientButton = findViewById(R.id.add_patient_button);
         fAuth = FirebaseAuth.getInstance();
+        backButton = findViewById(R.id.back_arrow);
 
         patientsListRv = findViewById(R.id.patients_list_rv);
         fStore = FirebaseFirestore.getInstance();
@@ -86,6 +89,13 @@ public class PatientsListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(PatientsListActivity.this, AddPatientActivity.class));
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

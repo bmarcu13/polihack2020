@@ -58,18 +58,18 @@ public class PatientDisplayActivity extends AppCompatActivity {
         symptomsTextView.setText(symptomsList);
 
         String sideEffectsList = "";
-        for (int i = 0; i < symptoms.size(); i++) {
+        for (int i = 0; i < sideEffects.size(); i++) {
             sideEffectsList += sideEffects.get(i);
-            if (i < symptoms.size() - 1) {
+            if (i < sideEffects.size() - 1) {
                 sideEffectsList += " • ";
             }
         }
         sideEffectsTextView.setText(sideEffectsList);
 
         String medicationList = "";
-        for (int i = 0; i < symptoms.size(); i++) {
+        for (int i = 0; i < medication.size(); i++) {
             medicationList += medication.get(i);
-            if (i < symptoms.size() - 1) {
+            if (i < medication.size() - 1) {
                 medicationList += " • ";
             }
         }
