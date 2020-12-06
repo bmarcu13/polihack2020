@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
@@ -54,6 +55,7 @@ public class AddPatientActivity extends AppCompatActivity implements MultiSelect
     private EditText nameField, ageField;
 
     private View backButton;
+    private CheckBox patientRecoveredCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,7 @@ public class AddPatientActivity extends AppCompatActivity implements MultiSelect
         sideEffectsSpinner = findViewById(R.id.side_effects_spinner);
 
         addPatientButton = findViewById(R.id.add_patient_button);
+        patientRecoveredCheckBox = findViewById(R.id.got_better_checkpoint);
 
         bloodTypeSpinner.setItems("0I, Rh+", "0I, Rh- ", "AII, Rh+", "AII, Rh- ", "BIII, Rh+", "BIII, Rh- ", "ABIV, Rh+", "ABIV, Rh-");
         sexSpinner.setItems("M", "F");
@@ -173,6 +176,8 @@ public class AddPatientActivity extends AppCompatActivity implements MultiSelect
         patientData.put("symptomps", chosenSymptomsList);
         patientData.put("medication", chosenMedicationList);
         patientData.put("side_effects", chosenSideEffectsList);
+        boolean gotBetter = patientRecoveredCheckBox.isChecked();
+        patientData.put("got_better", gotBetter);
 
         patientDoc.set(patientData);
         finish();

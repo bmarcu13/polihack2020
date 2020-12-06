@@ -147,8 +147,8 @@ public class ChartsActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             patientEntity.setSex(documentSnapshot.getString("sex"));
-                            patientEntity.setSex(documentSnapshot.getString("age"));
-                            patientEntity.setSex(documentSnapshot.getString("blood_type"));
+                            patientEntity.setAge(Integer.parseInt(documentSnapshot.get("age").toString()));
+                            patientEntity.setBloodType(documentSnapshot.getString("blood_type"));
                         }
                     });
 
