@@ -1,4 +1,4 @@
-package com.example.polihack2020bylos.DoctorApp.PatientList;
+package com.example.polihack2020bylos.DoctorApp.AddPatient;
 
 import androidx.appcompat.app.AppCompatActivity;
 

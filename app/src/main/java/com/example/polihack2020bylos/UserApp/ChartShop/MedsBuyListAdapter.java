@@ -1,7 +1,6 @@
-package com.example.polihack2020bylos.UserApp;
+package com.example.polihack2020bylos.UserApp.ChartShop;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.Medication;
+import com.example.polihack2020bylos.Entities.Medication;
 import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationDatabase;
 
 import java.util.List;

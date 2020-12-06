@@ -9,18 +9,18 @@
         android:roundIcon="@drawable/ic_final_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserApp.PersonalizedDataActivity"></activity>
+        <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity"></activity>
         <activity android:name=".UserApp.MedicationCart.MedicationCartActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
-        <activity android:name=".ChartsActivity" />
-        <activity android:name=".UserSignupActivity" />
-        <activity android:name=".UserLoginActivity" />
+        <activity android:name=".UserApp.ChartShop.ChartsActivity" />
+        <activity android:name=".AccountManagement.UserSignupActivity" />
+        <activity android:name=".AccountManagement.UserLoginActivity" />
         <activity android:name=".UserApp.UserMenuActivity" />
-        <activity android:name=".DoctorApp.PatientList.AddPatientActivity" />
+        <activity android:name=".DoctorApp.AddPatient.AddPatientActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientsListActivity" />
         <activity android:name=".DoctorApp.DoctorMenuActivity" />
-        <activity android:name=".DoctorLoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".AccountManagement.DoctorLoginActivity" />
+        <activity android:name=".UserApp.UserMenuActivity" />
         <activity android:name=".StartupPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

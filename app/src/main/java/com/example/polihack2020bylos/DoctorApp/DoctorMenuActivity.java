@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.polihack2020bylos.DoctorApp.PatientList.AddPatientActivity;
+import com.example.polihack2020bylos.DoctorApp.AddPatient.AddPatientActivity;
 import com.example.polihack2020bylos.DoctorApp.PatientList.PatientsListActivity;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
-import com.example.polihack2020bylos.UserApp.PersonalizedDataActivity;
+import com.example.polihack2020bylos.DoctorApp.PersonalizedData.PersonalizedDataActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DoctorMenuActivity extends AppCompatActivity {

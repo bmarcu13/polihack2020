@@ -1,4 +1,4 @@
-package com.example.polihack2020bylos;
+package com.example.polihack2020bylos.AccountManagement;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.polihack2020bylos.DoctorApp.DoctorMenuActivity;
+import com.example.polihack2020bylos.R;
+import com.example.polihack2020bylos.Util.Util;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

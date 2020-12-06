@@ -1,26 +1,19 @@
-package com.example.polihack2020bylos.UserApp;
+package com.example.polihack2020bylos.DoctorApp.PersonalizedData;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.example.polihack2020bylos.Entities.PatientEntity;
 import com.example.polihack2020bylos.Entities.ProgressBarData;
 import com.example.polihack2020bylos.R;
-import com.github.mikephil.charting.data.BarData;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;

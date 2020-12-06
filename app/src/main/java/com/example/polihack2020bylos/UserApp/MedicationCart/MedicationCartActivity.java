@@ -11,9 +11,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.polihack2020bylos.Entities.Medication;
 import com.example.polihack2020bylos.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MedicationCartActivity extends AppCompatActivity {

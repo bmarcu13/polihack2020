@@ -3,9 +3,9 @@ package com.example.polihack2020bylos.UserApp.MedicationCart;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 
+import com.example.polihack2020bylos.Entities.Medication;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;

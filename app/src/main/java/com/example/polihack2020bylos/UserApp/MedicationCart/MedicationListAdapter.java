@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.polihack2020bylos.Entities.Medication;
 import com.example.polihack2020bylos.R;
 
 import java.util.List;

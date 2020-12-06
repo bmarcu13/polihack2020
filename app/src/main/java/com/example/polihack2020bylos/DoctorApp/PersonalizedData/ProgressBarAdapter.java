@@ -1,24 +1,20 @@
-package com.example.polihack2020bylos.UserApp;
+package com.example.polihack2020bylos.DoctorApp.PersonalizedData;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.accessibility.AccessibilityViewCommand;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.example.polihack2020bylos.Entities.ProgressBarData;
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.Medication;
 import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationDatabase;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProgressBarAdapter extends ArrayAdapter<ProgressBarData> {

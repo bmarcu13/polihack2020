@@ -1,4 +1,4 @@
-package com.example.polihack2020bylos.UserApp.MedicationCart;
+package com.example.polihack2020bylos.Entities;
 
 public class Medication {
     private Long medicationId;

@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.polihack2020bylos.DoctorApp.AddPatient.Patient;
+import com.example.polihack2020bylos.DoctorApp.AddPatient.AddPatientActivity;
+import com.example.polihack2020bylos.Entities.Patient;
 import com.example.polihack2020bylos.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;

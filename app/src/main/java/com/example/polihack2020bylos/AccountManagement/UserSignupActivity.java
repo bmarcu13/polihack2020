@@ -1,4 +1,4 @@
-package com.example.polihack2020bylos;
+package com.example.polihack2020bylos.AccountManagement;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,70 +13,85 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.UserApp.UserMenuActivity;
+import com.example.polihack2020bylos.Util.Util;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class UserLoginActivity extends AppCompatActivity {
+public class UserSignupActivity extends AppCompatActivity {
 
-    private EditText emailField, passField;
-    private Button loginButton;
+    private EditText emailField, passField, confirmPassField;
+    private Button signupButton;
     private FirebaseAuth fAuth;
     private FrameLayout loadingScreen;
-    private TextView create_an_account_button;
+    private TextView goToLogin;
 
-    private View emailFieldActivityBar, passwordFieldActivityBar;
+    private View emailFieldActivityBar, passwordFieldActivityBar, passwordConfirmationActivityBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
+        setContentView(R.layout.activity_user_signup);
 
         fAuth = FirebaseAuth.getInstance();
+
         emailField = findViewById(R.id.email_field);
         passField = findViewById(R.id.password_field);
-        loginButton = findViewById(R.id.login_button);
+        confirmPassField = findViewById(R.id.confirm_password_field);
+
+        signupButton = findViewById(R.id.signup_button);
         loadingScreen = findViewById(R.id.loadingOverlay);
-        create_an_account_button = findViewById(R.id.create_account_button);
+
+        goToLogin = findViewById(R.id.go_to_login);
 
         emailFieldActivityBar = findViewById(R.id.email_field_bar);
         passwordFieldActivityBar = findViewById(R.id.password_field_bar);
+        passwordConfirmationActivityBar = findViewById(R.id.confirm_password_bar);
 
-        if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email, password;
+                String email, password, passwordConfirmation;
 
                 email = emailField.getText().toString().trim();
                 password = passField.getText().toString().trim();
+                passwordConfirmation = confirmPassField.getText().toString().trim();
 
                 if (email.isEmpty()) {
-                    emailField.setError("This field can't be empty.");
-                    return;
-                }
-                if (password.isEmpty()) {
-                    passField.setError("This field can't be empty.");
+                    emailField.setError("This field can't be empty");
                     return;
                 }
 
+                if (password.isEmpty()){
+                    passField.setError("This field can't be empty");
+                    return;
+                }
+                if (passwordConfirmation.isEmpty()) {
+                    confirmPassField.setError("This field can't be empty");
+                    return;
+                }
+                if (!password.equals(passwordConfirmation)) {
+                    passField.setError("The passwords don't match");
+                    return;
+                }
+                if (password.length() < 6) {
+                    passField.setError("Password must be at least 6 characters long");
+                    return;
+                }
                 loadingScreen.setVisibility(ConstraintLayout.VISIBLE);
 
-                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
+                        if(task.isSuccessful()) {
+                            startActivity(new Intent(UserSignupActivity.this, UserMenuActivity.class));
                             finish();
                         }
                         else {
-                            Toast.makeText(UserLoginActivity.this, "Error: " + task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UserSignupActivity.this, "Error:" + task.getException(), Toast.LENGTH_SHORT).show();
                             loadingScreen.setVisibility(ConstraintLayout.INVISIBLE);
                         }
                     }
@@ -84,10 +99,10 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         });
 
-        create_an_account_button.setOnClickListener(new View.OnClickListener() {
+        goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserLoginActivity.this, UserSignupActivity.class));
+                finish();
             }
         });
 

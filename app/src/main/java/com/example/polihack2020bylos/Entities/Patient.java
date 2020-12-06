@@ -1,4 +1,4 @@
-package com.example.polihack2020bylos.DoctorApp.AddPatient;
+package com.example.polihack2020bylos.Entities;
 
 import java.util.ArrayList;
 

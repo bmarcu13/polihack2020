@@ -1,4 +1,4 @@
-package com.example.polihack2020bylos;
+package com.example.polihack2020bylos.UserApp.ChartShop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.polihack2020bylos.Entities.PatientEntity;
+import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationCartActivity;
-import com.example.polihack2020bylos.UserApp.MedsBuyListAdapter;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
