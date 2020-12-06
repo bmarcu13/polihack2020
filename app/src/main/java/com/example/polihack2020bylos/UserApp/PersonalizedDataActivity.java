@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
@@ -30,6 +32,7 @@ public class PersonalizedDataActivity extends AppCompatActivity {
     private ListView barListView;
     private FirebaseFirestore fStore;
     private FirebaseAuth fAuth;
+    private Button backButton;
 
     private ArrayList<PatientEntity> patientsList;
     private ArrayList<String> medicationList;
@@ -124,6 +127,12 @@ public class PersonalizedDataActivity extends AppCompatActivity {
                         setUpBarList(drugEfficiencyList);
                     }
                 }
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
