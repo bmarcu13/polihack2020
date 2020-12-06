@@ -13,6 +13,19 @@
         android:background="@drawable/ic_wave_shortened"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:tint="@color/white" />
+
+
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
@@ -31,7 +44,7 @@
         android:id="@+id/medicationListCart"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,26 +64,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:cardBackgroundColor="@color/gradientEndColor"
-        app:cardCornerRadius="20dp"
+
+    <Button
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/buttonBuy"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ripple_effect_button_startup"
 
-        <Button
-            android:id="@+id/buttonBuy"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/ripple_effect_button_startup"
-            android:backgroundTint="#00FFFFFF"
-            android:text="BUY MEDICATION"
-            android:textColor="#FFFFFF" />
-    </androidx.cardview.widget.CardView>
+        android:text="BUY PRODUCTS"
+        android:textColor="#FFFFFF" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

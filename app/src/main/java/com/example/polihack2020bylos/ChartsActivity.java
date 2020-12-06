@@ -59,12 +59,14 @@ public class ChartsActivity extends AppCompatActivity {
 
     private ArrayList<String> medicationList;
     private ArrayList<String> symptomsList;
+    private ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
 
+        backButton = findViewById(R.id.back_arrow);
         fStore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
 
@@ -221,6 +223,14 @@ public class ChartsActivity extends AppCompatActivity {
                 Log.d("TAG", "onClick: " + filteredList);
             }
         });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        
     }
 
     private void createBarChartSymptoms (ArrayList<Integer> symptomsCommonaltyList) {

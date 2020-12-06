@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,11 +24,14 @@ public class MedicationCartActivity extends AppCompatActivity {
     TextView finalPrice;
     Handler handler;
     Button buttonBuy;
+    private ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medication_cart);
+
+        backButton = findViewById(R.id.back_arrow);
 
         medicationDatabase = new MedicationDatabase(this);
         medicationList = medicationDatabase.getMedication();
@@ -63,6 +67,12 @@ public class MedicationCartActivity extends AppCompatActivity {
             }
         });
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
