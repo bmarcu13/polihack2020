@@ -53,8 +53,9 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="60dp"
-            android:background="@drawable/ripple_effect_mask_button"
+            android:background="@drawable/ripple_effect_button_startup"
             android:text="@string/login_button_text"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/password_field"
             app:layout_constraintStart_toStartOf="@id/password_field"
             app:layout_constraintTop_toBottomOf="@id/password_field"/>
@@ -79,17 +80,7 @@
 
 
 
-        <TextView
-            android:id="@+id/create_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@string/login_create_an_account"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/password_field"
-            app:layout_constraintTop_toBottomOf="@id/password_field" />
+
 
         <TextView
             android:id="@+id/pass_recovery"

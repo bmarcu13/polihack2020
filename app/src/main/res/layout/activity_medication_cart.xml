@@ -51,32 +51,48 @@
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/finalPrice"
-        android:layout_width="74dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="right|center_vertical"
-        android:text="final price"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
     <Button
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="20dp"
         android:id="@+id/buttonBuy"
+        android:textAllCaps="false"
+        android:layout_marginStart="20dp"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:background="@drawable/ripple_effect_button_startup"
+        android:text="Buy Products"
+        android:textColor="#FFFFFF"
+        android:elevation="20dp" />
 
-        android:text="BUY PRODUCTS"
-        android:textColor="#FFFFFF" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="center_vertical"
+        app:cardCornerRadius="20dp"
+        android:elevation="20dp">
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:id="@+id/finalPrice"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:minWidth="150dp"
+            android:layout_height="50dp"
+            android:text=""
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

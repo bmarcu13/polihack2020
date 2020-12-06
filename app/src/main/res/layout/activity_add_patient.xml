@@ -64,6 +64,7 @@
                 android:hint="Name"
                 android:inputType="textPersonName"
                 android:lines="1"
+                android:paddingLeft="15dp"
                 android:maxLines="1"
                 android:paddingEnd="10dp"
                 android:textColor="@color/black"
@@ -148,9 +149,8 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center_vertical"
-                android:hint="Medication"
                 android:paddingStart="10dp"
-                app:hintText="Blood type"
+                app:hintText="Side Effects"
                 app:layout_constraintEnd_toEndOf="@id/age_field"
                 app:layout_constraintStart_toStartOf="@id/blood_type_spinner"
                 app:layout_constraintTop_toBottomOf="@id/medication_spinner" />
