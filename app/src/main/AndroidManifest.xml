@@ -9,9 +9,10 @@
         android:roundIcon="@drawable/ic_final_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserApp.MedicationCart.MedicationCartActivity"></activity>
+        <activity android:name=".UserApp.PersonalizedDataActivity"></activity>
+        <activity android:name=".UserApp.MedicationCart.MedicationCartActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
-        <activity android:name=".ChartsActivity"></activity>
+        <activity android:name=".ChartsActivity" />
         <activity android:name=".UserSignupActivity" />
         <activity android:name=".UserLoginActivity" />
         <activity android:name=".UserApp.UserMenuActivity" />

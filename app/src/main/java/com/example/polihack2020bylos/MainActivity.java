@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.polihack2020bylos.UserApp.PersonalizedDataActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button logoutButton;
+    private Button logoutButton, personalizeDataButton;
     private TextView goToCharts;
     private FirebaseAuth fAuth;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         logoutButton = findViewById(R.id.logout);
         goToCharts = findViewById(R.id.go_to_charts);
+        personalizeDataButton = findViewById(R.id.go_to_personalized_data);
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ChartsActivity.class));
             }
         });
-
     }
 }
