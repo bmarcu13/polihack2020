@@ -12,6 +12,7 @@ import com.example.polihack2020bylos.DoctorApp.PatientList.AddPatientActivity;
 import com.example.polihack2020bylos.DoctorApp.PatientList.PatientsListActivity;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
+import com.example.polihack2020bylos.UserApp.PersonalizedDataActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DoctorMenuActivity extends AppCompatActivity {
@@ -47,6 +48,14 @@ public class DoctorMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DoctorMenuActivity.this, AddPatientActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button btn = findViewById(R.id.go_to_personalized_data);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DoctorMenuActivity.this, PersonalizedDataActivity.class);
                 startActivity(intent);
             }
         });

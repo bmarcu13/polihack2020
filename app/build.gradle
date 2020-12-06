@@ -56,4 +56,5 @@ dependencies {
     implementation 'com.github.pratikbutani:MultiSelectSpinner:-SNAPSHOT'
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.1'
 }
