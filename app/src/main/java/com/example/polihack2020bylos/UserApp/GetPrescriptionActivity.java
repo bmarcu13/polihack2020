@@ -39,7 +39,7 @@ public class GetPrescriptionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String code = codeField.getText().toString();
-                for (int i = 5; i < code.length(); i += 2 ) {
+                for (int i = 6; i < code.length(); i += 2 ) {
                     drugQuantities.add(new Drug(medicationList.get(Character.getNumericValue(code.charAt(i))),  Character.getNumericValue(code.charAt(i + 1))));
                     Log.d("TAG", "onClick: " + medicationList.get(Character.getNumericValue(code.charAt(i))) + Character.getNumericValue(code.charAt(i + 1)));
                 }
