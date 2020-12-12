@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
 import com.example.polihack2020bylos.UserApp.ChartShop.ChartsActivity;
+import com.example.polihack2020bylos.UserApp.GetPrescription.GetPrescriptionActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserMenuActivity extends AppCompatActivity {

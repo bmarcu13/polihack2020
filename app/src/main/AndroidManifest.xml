@@ -12,7 +12,7 @@
         <activity android:name=".DoctorApp.CreatePrescription.CreatePrescriptionCodeActivity"></activity>
         <activity android:name=".DoctorApp.CreatePrescription.CreatePrescriptionActivity" />
         <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity" />
-        <activity android:name=".UserApp.GetPrescriptionActivity"></activity>
+        <activity android:name=".UserApp.GetPrescription.GetPrescriptionActivity"></activity>
         <activity android:name=".UserApp.MedicationCart.MedicationCartActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
         <activity android:name=".UserApp.ChartShop.ChartsActivity" />
