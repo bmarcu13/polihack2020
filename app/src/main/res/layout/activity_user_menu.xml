@@ -19,20 +19,37 @@
 
     <Button
         android:id="@+id/go_to_charts"
+        android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:elevation="20dp"
         android:background="@drawable/ripple_effect_button_startup"
+        android:elevation="20dp"
         android:gravity="center"
         android:text="See charts"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAllCaps="false"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/go_to_decoding"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ripple_effect_button_startup"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Get prescription"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_to_charts" />
 
     <TextView
         android:id="@+id/textView"

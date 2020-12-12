@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/ic_final_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity"></activity>
+        <activity android:name=".UserApp.GetPrescriptionActivity"></activity>
+        <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity" />
         <activity android:name=".UserApp.MedicationCart.MedicationCartActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
         <activity android:name=".UserApp.ChartShop.ChartsActivity" />
@@ -20,7 +21,6 @@
         <activity android:name=".DoctorApp.PatientList.PatientsListActivity" />
         <activity android:name=".DoctorApp.DoctorMenuActivity" />
         <activity android:name=".AccountManagement.DoctorLoginActivity" />
-        <activity android:name=".UserApp.UserMenuActivity" />
         <activity android:name=".StartupPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
