@@ -39,6 +39,13 @@ public class UserMenuActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.go_to_decoding).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserMenuActivity.this, GetPrescriptionActivity.class));
+            }
+        });
+
         goToCharts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
