@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.polihack2020bylos.DoctorApp.AddPatient.AddPatientActivity;
+import com.example.polihack2020bylos.DoctorApp.CreatePrescription.CreatePrescriptionActivity;
 import com.example.polihack2020bylos.DoctorApp.PatientList.PatientsListActivity;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
@@ -17,8 +18,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class DoctorMenuActivity extends AppCompatActivity {
 
-    TextView buttonViewPatientsList;
-    TextView buttonAddPatient;
+    Button buttonViewPatientsList;
+    Button buttonAddPatient;
+    Button buttonGoToPersonalizedData;
+    Button buttonCreatePrescription;
     private Button logoutButton;
     private FirebaseAuth fAuth;
 
@@ -51,11 +54,21 @@ public class DoctorMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button btn = findViewById(R.id.go_to_personalized_data);
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        buttonGoToPersonalizedData = findViewById(R.id.go_to_personalized_data);
+        buttonGoToPersonalizedData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DoctorMenuActivity.this, PersonalizedDataActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonCreatePrescription = findViewById(R.id.buttonCreatePrescription);
+        buttonCreatePrescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DoctorMenuActivity.this, CreatePrescriptionActivity.class);
                 startActivity(intent);
             }
         });
