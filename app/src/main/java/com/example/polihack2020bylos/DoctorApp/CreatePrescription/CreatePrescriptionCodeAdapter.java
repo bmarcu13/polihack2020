@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 
 import com.example.polihack2020bylos.Entities.Medication;
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationDatabase;
+import com.example.polihack2020bylos.Databases.MedicationDatabase;
 
 import java.util.List;
 

@@ -12,11 +12,12 @@ import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
 import com.example.polihack2020bylos.UserApp.ChartShop.ChartsActivity;
 import com.example.polihack2020bylos.UserApp.GetPrescription.GetPrescriptionActivity;
+import com.example.polihack2020bylos.UserApp.MessagingUser.MessagingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserMenuActivity extends AppCompatActivity {
 
-    private Button logoutButton, personalizeDataButton;
+    private Button logoutButton, personalizeDataButton, buttonChatDoctor;
     private TextView goToCharts;
     private FirebaseAuth fAuth;
 
@@ -30,6 +31,7 @@ public class UserMenuActivity extends AppCompatActivity {
         logoutButton = findViewById(R.id.logout);
         goToCharts = findViewById(R.id.go_to_charts);
         personalizeDataButton = findViewById(R.id.go_to_personalized_data);
+        buttonChatDoctor = findViewById(R.id.chat_doctor);
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +53,13 @@ public class UserMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(UserMenuActivity.this, ChartsActivity.class));
+            }
+        });
+
+        buttonChatDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserMenuActivity.this, MessagingActivity.class));
             }
         });
     }

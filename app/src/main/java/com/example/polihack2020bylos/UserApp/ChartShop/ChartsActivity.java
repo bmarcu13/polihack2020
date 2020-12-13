@@ -14,7 +14,6 @@ import android.widget.ListView;
 
 import com.example.polihack2020bylos.Entities.PatientEntity;
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationCartActivity;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -54,7 +53,6 @@ public class ChartsActivity extends AppCompatActivity {
     private BarChart barChartMedication, barChartSymptoms;
 
     private Button bineintelesButton;
-    private ImageView buttonGoToCart;
     private ListView medsBuyListView;
 
     private ArrayList<String> medicationList;
@@ -165,9 +163,7 @@ public class ChartsActivity extends AppCompatActivity {
             }
         });
 
-        medicationList.add("Mask");
 
-        goToCart();
         setUpMedBuyListAdapter(medicationList);
 
         //filter button
@@ -337,16 +333,6 @@ public class ChartsActivity extends AppCompatActivity {
 
     }
 
-    private void goToCart(){
-        buttonGoToCart = findViewById(R.id.buttonGoToCart);
-        buttonGoToCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChartsActivity.this, MedicationCartActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     private void setUpMedBuyListAdapter(ArrayList<String> medicationList){
         medsBuyListView = findViewById(R.id.lvMedsBuy);

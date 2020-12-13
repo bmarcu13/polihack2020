@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.UserApp.ChartShop.ChartsActivity;
 import com.example.polihack2020bylos.UserApp.ChartShop.MedsBuyListAdapter;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationCartActivity;
+
 
 import java.util.ArrayList;
 

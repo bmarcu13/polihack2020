@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 import com.example.polihack2020bylos.Entities.Medication;
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationCartActivity;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationDatabase;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationListAdapter;
+import com.example.polihack2020bylos.Databases.MedicationDatabase;
 
 import java.util.List;
 import java.util.Random;

@@ -35,10 +35,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
+        android:id="@+id/chat_doctor"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/ripple_effect_button_startup"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Contact a doctor"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_to_charts" />
+
+    <Button
         android:id="@+id/go_to_decoding"
         android:layout_width="200dp"
         android:layout_height="60dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ripple_effect_button_startup"
         android:elevation="20dp"
         android:gravity="center"
@@ -48,8 +65,9 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/go_to_charts" />
+        app:layout_constraintTop_toBottomOf="@+id/chat_doctor" />
 
     <TextView
         android:id="@+id/textView"

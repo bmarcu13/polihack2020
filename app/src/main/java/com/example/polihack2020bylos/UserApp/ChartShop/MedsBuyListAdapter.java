@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import androidx.annotation.NonNull;
 
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.Entities.Medication;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationDatabase;
+import com.example.polihack2020bylos.Databases.MedicationDatabase;
 
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class MedsBuyListAdapter extends ArrayAdapter<String> {
         convertView = inflater.inflate(mResource, parent, false);
 
 
-        Button buttonMedAdd = convertView.findViewById(R.id.buttonMedAdd);
+
         TextView tvMedName = convertView.findViewById(R.id.tvMedName);
         TextView tvMedDescription = convertView.findViewById(R.id.tvMedDescription);
         ImageView ivMedPicture = convertView.findViewById(R.id.ivMedPicture);
@@ -49,12 +48,6 @@ public class MedsBuyListAdapter extends ArrayAdapter<String> {
         tvMedName.setText(nameMed);
         setUpAdapter(nameMed, tvMedDescription, ivMedPicture);
 
-        buttonMedAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addInMedicationList(nameMed);
-            }
-        });
 
         return convertView;
     }
@@ -96,15 +89,11 @@ public class MedsBuyListAdapter extends ArrayAdapter<String> {
             ivMedPicture.setImageResource(R.drawable.vitaminc);
         }
 
-        if(medicationName.equals("Mask")){
-            tvMedDescription.setText("50 pcs, 3 layers, 11.99€");
-            ivMedPicture.setImageResource(R.drawable.masca2);
-        }
     }
 
 
 
-    private void addInMedicationList(String medicationName){
+    private void addInMedicationList(String medicationName){  //o las aici ca poate imi trebuie la ceva
 
         MedicationDatabase medicationDatabase = new MedicationDatabase(mContext);
 

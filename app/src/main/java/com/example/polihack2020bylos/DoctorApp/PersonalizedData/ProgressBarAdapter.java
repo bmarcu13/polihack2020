@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.example.polihack2020bylos.Entities.ProgressBarData;
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationDatabase;
+import com.example.polihack2020bylos.Databases.MedicationDatabase;
 
 import java.util.List;
 

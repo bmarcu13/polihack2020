@@ -16,8 +16,7 @@ import android.widget.Toast;
 import com.example.polihack2020bylos.Entities.Drug;
 import com.example.polihack2020bylos.Entities.Medication;
 import com.example.polihack2020bylos.R;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationCartActivity;
-import com.example.polihack2020bylos.UserApp.MedicationCart.MedicationListAdapter;
+
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

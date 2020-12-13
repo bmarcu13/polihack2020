@@ -4,14 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MessagingActivity">
+    tools:context=".UserApp.MessagingUser.MessagingActivity">
 
     <View
-        android:id="@+id/messaging_top_view"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/ic_wave_shortened"/>
+        android:layout_height="80dp"
+        android:background="@drawable/ic_wave_shortened"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_arrow_messaging"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:tint="@color/white" />
+
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Chat"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/first_message_constraint"
@@ -303,9 +330,10 @@
             <EditText
                 android:id="@+id/message_et"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="30dp"
                 android:background="@drawable/send_message_et"
-                android:gravity="center"
+                android:gravity="start"
+                android:paddingLeft="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/send_message_iv"
                 app:layout_constraintStart_toStartOf="parent"
