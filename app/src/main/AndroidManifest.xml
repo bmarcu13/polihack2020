@@ -11,6 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MessagingActivity"></activity>
         <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity" />
+        <activity android:name=".DoctorApp.CreatePrescription.CreatePrescriptionCodeActivity"></activity>
+        <activity android:name=".DoctorApp.CreatePrescription.CreatePrescriptionActivity" />
+        <activity android:name=".UserApp.GetPrescription.GetPrescriptionActivity"></activity>
         <activity android:name=".UserApp.MedicationCart.MedicationCartActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
         <activity android:name=".UserApp.ChartShop.ChartsActivity" />
@@ -21,7 +24,6 @@
         <activity android:name=".DoctorApp.PatientList.PatientsListActivity" />
         <activity android:name=".DoctorApp.DoctorMenuActivity" />
         <activity android:name=".AccountManagement.DoctorLoginActivity" />
-        <activity android:name=".UserApp.UserMenuActivity" />
         <activity android:name=".StartupPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

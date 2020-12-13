@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
 import com.example.polihack2020bylos.UserApp.ChartShop.ChartsActivity;
+import com.example.polihack2020bylos.UserApp.GetPrescription.GetPrescriptionActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserMenuActivity extends AppCompatActivity {
@@ -36,6 +37,13 @@ public class UserMenuActivity extends AppCompatActivity {
                 fAuth.signOut();
                 startActivity(new Intent(UserMenuActivity.this, StartupPageActivity.class));
                 finish();
+            }
+        });
+
+        findViewById(R.id.go_to_decoding).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserMenuActivity.this, GetPrescriptionActivity.class));
             }
         });
 
