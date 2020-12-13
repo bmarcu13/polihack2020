@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.polihack2020bylos.DoctorApp.AddPatient.AddPatientActivity;
 import com.example.polihack2020bylos.DoctorApp.CreatePrescription.CreatePrescriptionActivity;
+import com.example.polihack2020bylos.DoctorApp.MessagingDoctor.MessagingDoctorActivity;
 import com.example.polihack2020bylos.DoctorApp.PatientList.PatientsListActivity;
 import com.example.polihack2020bylos.R;
 import com.example.polihack2020bylos.StartupPageActivity;
@@ -22,6 +23,7 @@ public class DoctorMenuActivity extends AppCompatActivity {
     Button buttonAddPatient;
     Button buttonGoToPersonalizedData;
     Button buttonCreatePrescription;
+    Button buttonMessage;
     private Button logoutButton;
     private FirebaseAuth fAuth;
 
@@ -69,6 +71,15 @@ public class DoctorMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DoctorMenuActivity.this, CreatePrescriptionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonMessage = findViewById(R.id.buttonMessage);
+        buttonMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DoctorMenuActivity.this, MessagingDoctorActivity.class);
                 startActivity(intent);
             }
         });
