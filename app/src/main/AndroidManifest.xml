@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/ic_final_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity"></activity>
+        <activity android:name=".MessagingActivity"></activity>
+        <activity android:name=".DoctorApp.PersonalizedData.PersonalizedDataActivity" />
         <activity android:name=".UserApp.MedicationCart.MedicationCartActivity" />
         <activity android:name=".DoctorApp.PatientList.PatientDisplayActivity" />
         <activity android:name=".UserApp.ChartShop.ChartsActivity" />

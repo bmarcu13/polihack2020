@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MessagingActivity">
+
+    <View
+        android:id="@+id/messaging_top_view"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_wave_shortened"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/send_message_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_first_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/messaging_first_iv"
+            android:id="@+id/messaging_first_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Ok multumesc!"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_user_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/second_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/first_message_constraint"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_second_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/messaging_second_iv"
+            android:id="@+id/messaging_second_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Prin intermediul acestei aplicatii"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_doctor_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/third_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/second_message_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_third_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/messaging_third_iv"
+            android:id="@+id/messaging_third_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="De unde pot cumpara reteta?"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_user_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fourth_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/third_message_constraint"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_fourth_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/messaging_fourth_iv"
+            android:id="@+id/messaging_fourth_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Va voi trimite un cod pe care il folositi  &#10; pentru a va cumpara reteta."
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center_vertical|"
+            android:background="@drawable/ripple_effect_doctor_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fifth_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/fourth_message_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_fifth_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/messaging_fifth_iv"
+            android:id="@+id/messaging_fifth_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Ma doare capul si gatul"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_user_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sixth_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/fifth_message_constraint"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_sixth_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/messaging_sixth_iv"
+            android:id="@+id/messaging_sixth_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Ce simptome aveti?"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_doctor_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seventh_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/sixth_message_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_seventh_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/messaging_seventh_iv"
+            android:id="@+id/messaging_seventh_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Am fost confirmat pozitiv cu Covid "
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_user_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/eighth_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/seventh_message_constraint"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_eighth_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/messaging_eighth_iv"
+            android:id="@+id/messaging_eighth_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Buna ziua! Cu ce va pot ajuta?"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_doctor_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nineth_message_constraint"
+        app:layout_constraintBottom_toTopOf="@id/eighth_message_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/messaging_nineth_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user_icon"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/messaging_nineth_iv"
+            android:id="@+id/messaging_nineth_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Buna ziua!"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/ripple_effect_user_messaging"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/send_message_constraint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/et_and_iv_sen_message_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp">
+
+            <EditText
+                android:id="@+id/message_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/send_message_et"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/send_message_iv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/send_message_iv"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:src="@drawable/send_message"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
